@@ -17,4 +17,9 @@ This document summarizes the basic flows described in the technical specificatio
 2. Gateway creates a transaction via Transaction Service.
 3. Service communicates with BinCentric and notifies the bot on completion.
 
+The repository now contains minimal FastAPI services for users, cards,
+transactions, crypto wallet and notifications. Each service exposes in-memory
+APIs that mirror the endpoints described in the technical specification.  The
+API gateway proxies requests to these services.
+
 Refer to `TD.txt` for the full Russian version of the specification.
