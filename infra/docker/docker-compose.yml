@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  user-service:
+    build: ../../backend/user-service
+    ports:
+      - "8001:8000"
+  card-service:
+    build: ../../backend/card-service
+    ports:
+      - "8002:8000"
+  transaction-service:
+    build: ../../backend/transaction-service
+    ports:
+      - "8003:8000"
+  notification-service:
+    build: ../../backend/notification-service
+    ports:
+      - "8004:8000"
+  crypto-service:
+    build: ../../backend/crypto-service
+    ports:
+      - "8005:8000"
+  api-gateway:
+    build: ../../gateway/api-gateway
+    ports:
+      - "8080:8000"
+    depends_on:
+      - user-service
+      - card-service
+      - transaction-service
